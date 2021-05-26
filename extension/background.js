@@ -29,7 +29,8 @@ function postArticle() {
         username: username,
         password: password,
     }
-    fetch("https://elatest.herokuapp.com/postarticle", {
+    //URL redacted for security purposes
+    fetch("notarealurl.com", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
