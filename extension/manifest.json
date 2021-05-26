@@ -1,0 +1,22 @@
+{
+	"manifest_version": 2,
+	
+	"name": "Article Finder",
+	"description": "This extension will automatically find an article and post it every month",
+	"version": "1.0",
+	"permissions": ["storage", "notifications", "alarms"],
+	
+	"browser_action":{
+		"default_icon": "icon.png",
+		"default_popup": "index.html"
+	},
+	
+    "background":{
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+	
+	
+	
+}
+
