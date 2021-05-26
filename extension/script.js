@@ -70,7 +70,8 @@ function postArticle() {
     }
 
     // Sends post request to API
-    fetch("https://elatest.herokuapp.com/postarticle", {
+    //URL redacted for security purposes
+    fetch("notarealurl.com", {
         method: "POST",
         mode: 'no-cors',
         headers: {
