@@ -6,8 +6,8 @@ Herndon Law, P.C. is subscribed to Elder Law Answers, a service that writes arti
 
 **Features**
 
-*Logs into Elder Law Answers with the supplied user information
-*Finds the most recent article written
-*Posts to the attorney blog
-*Stores login information for the user
-*Finds a new article every Monday, if the article exists on Elder Law Anwers
+* Logs into Elder Law Answers with the supplied user information
+* Finds the most recent article written
+* Posts to the attorney blog
+* Stores login information for the user
+* Finds a new article every Monday, if the article exists on Elder Law Anwers
