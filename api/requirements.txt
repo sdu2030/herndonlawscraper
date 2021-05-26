@@ -1,0 +1,4 @@
+selenium
+gunicorn
+Flask
+flask-cors
