@@ -1,0 +1,47 @@
+.title{
+    color: rgb(255, 255, 255);
+}
+
+.description{
+    color: rgb(150, 150, 150);
+    font-weight: 700;
+}
+
+button{
+    color:rgb(255, 255, 255);
+    font-weight: 700;
+    background-color: #5f5fff;
+    
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+#submit{
+    margin-top: 3px;
+    margin-bottom: 15px;
+}
+
+button:hover{
+    background-color: #5151df;
+}
+
+button:active{
+    background-color: #383896;
+}
+
+.formbox{
+    width:200px;
+}
+
+input{
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+body{
+
+    background: rgb(41, 41, 41);
+}

@@ -40,18 +40,29 @@ function setMessage(message) {
     chrome.notifications.create("article-finder-notify", options);
 }
 
+function getPassword(){
+    chrome.storage.sync.get(['password'],
+        function (result) {
+            console.log(result.key);
+            return result.key;
+        }
+    );
+}
+
 function getLoginInfo() {
     try {
         // Gets username and password data from chrome storage
         chrome.storage.sync.get(['username'],
             function (result) {
                 username = result.key;
-            });
+            }
+        );
 
-        password = chrome.storage.sync.get(
+        chrome.storage.sync.get(
             function (result) {
                 password = result.key;
-            });
+            }
+        );
 
         return true;
 
@@ -62,25 +73,55 @@ function getLoginInfo() {
 
 }
 
-function postArticle() {
-    getLoginInfo();
+
+/**function postArticle() {
+    var input = getLogin();
+
+    
     var input = {
         username: username,
         password: password,
     }
+    
 
-    // Sends post request to API
-    //URL redacted for security purposes
-    fetch("notarealurl.com", {
+    console.log(input);
+
+
+    fetch("https://elatest.herokuapp.com/postarticle", {
         method: "POST",
         mode: 'no-cors',
         headers: {
+            'Accept': 'application/json',
             "Content-type": "application/json"
         },
         body: JSON.stringify(input),
     }).then((response) => response.json());
 
     setMessage("Article posted!");
+}*/
+
+function postArticle(){
+    chrome.storage.sync.get(['username', 'password'],
+            function (result) {
+                var input = {
+                    username: result['username'],
+                    password: result['password'],
+                }
+                console.log(JSON.stringify(input))
+                fetch("https://elatest.herokuapp.com/postarticle", {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify(input),
+                }).then((response) => response.json());
+
+                setMessage("Article posted!");
+
+            }
+    );
+
+
 }
 
 window.onload = function () {

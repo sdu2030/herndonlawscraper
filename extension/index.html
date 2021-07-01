@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="ISO-8859-1">
 	<title>Article Finder</title>
 </head>
 
 <body>
-	<h2>Article Finder</h2>
-	<p>Enter your Elder Law Answers Login Information</p>
+	<h2 class="title">Article Finder</h2>
+	<p class="description">Enter your Elder Law Answers Login Information</p>
 	<p id="message"></p>
-	<form>
-		<label for="username">Username:</label>
-		<input type="text" name="username" id="username" />
+	<form class= "formbox">
+		<label for="username" class="description">Username:</label>
+		<input type="text" name="username" id="username" placeholder=" Username"/>
 		<br/>
-		<label for="password">Password:</label>
-		<input type="password" name = "password" id="password"/>
-		<input type="submit" value="Submit" id="submit"/>
+		<label for="password" class="description">Password:</label>
+		<input type="password" name = "password" id="password" placeholder=" Password"/>
+		<br/>
+		<button type="submit" id="submit" class="button">Login</button>
 	</form>
 	
-	<button id="post">Post Now</button>
+	<button id="post" class="button">Post Now</button>
 	
 	<script src="script.js"></script>
 </body>

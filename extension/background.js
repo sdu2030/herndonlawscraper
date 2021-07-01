@@ -23,25 +23,57 @@ function getLoginInfo() {
 
 }
 
+/*
 function postArticle() {
     getLoginInfo();
     var input = {
         username: username,
         password: password,
     }
-    //URL redacted for security purposes
-    fetch("notarealurl.com", {
+
+    alert(JSON.stringify(input))
+    
+
+    fetch("https://elatest.herokuapp.com/postarticle", {
         method: "POST",
         headers: {
+            'Accept': 'application/json',
             "Content-type": "application/json"
         },
         body: JSON.stringify(input),
     }).then((response) => response.json())
         .catch(function (error) {
-            console.log("Article was unable")
+            console.log("Article was unable to be posted")
         })
 
+    
+
     setMessage("Article posted!");
+}
+*/
+
+function postArticle(){
+    chrome.storage.sync.get(['username', 'password'],
+            function (result) {
+                var input = {
+                    username: result['username'],
+                    password: result['password'],
+                }
+                console.log(JSON.stringify(input))
+                fetch("https://elatest.herokuapp.com/postarticle", {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify(input),
+                }).then((response) => response.json());
+
+                setMessage("Article posted!");
+
+            }
+    );
+
+
 }
 
 function checkDay() {
